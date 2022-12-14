@@ -5,13 +5,15 @@ var gImgs = []
 var nextId = 1
 
 var gMeme = {
-    selectedImgId:1,
-    selectedLineIdx:0,
-    lines: [{ txt: '',
-        size: 20,
+    selectedImgId: 1,
+    selectedLineIdx: 0,
+    lines: [{
+        txt: '',
+        size: 30,
         align: 'ltr',
-        fillColor:'white',
-        strokeColor: 'black'
+        fillColor: 'white',
+        strokeColor: 'black',
+        pos: { x: 70, y: 50 }
     }
     ]
 }
@@ -59,26 +61,49 @@ function getMeme() {
 function setLineTxt(value) {
     // console.log('text:',value)
     gMeme.lines[gMeme.selectedLineIdx].txt = value
-      
-    }
+
+}
 //    gMeme.lines[gMeme.selectedLineIdx]=line
 //    console.log('gmeme:',gMeme)
 
 
-function setFillColor(value){
+function setFillColor(value) {
     // console.log('value at fill:',value)
     // console.log('lineidx color:',gMeme.lines[gMeme.selectedLineIdx])
-    gMeme.lines[gMeme.selectedLineIdx].fillColor=value
+    gMeme.lines[gMeme.selectedLineIdx].fillColor = value
 
 }
 
-function setStrokeColor(value){
-    console.log('value at stroke:',value)
-    gMeme.lines[gMeme.selectedLineIdx].strokeColor=value
+function setStrokeColor(value) {
+    console.log('value at stroke:', value)
+    gMeme.lines[gMeme.selectedLineIdx].strokeColor = value
 
 }
 
-function setAlign(value){
-    gMeme.lines[gMeme.selectedLineIdx].align=value
+function setAlign(value) {
+    gMeme.lines[gMeme.selectedLineIdx].align = value
+   var { x } = gMeme.lines[gMeme.selectedLineIdx].pos
+    switch (value) {
+        case 'rtl':
+            x = 420
+            break
+        case 'center':
+            x = 230
+            // gCtx.align=align
+            break
+        case 'ltr':
+            x = 70
+    }
 
+}
+
+function setFontSize(value) {
+    if (value === 'up') gMeme.lines[gMeme.selectedLineIdx].size += 5
+    if (value === 'down') gMeme.lines[gMeme.selectedLineIdx].size -= 5
+
+}
+
+function setLinePos(value) {
+    if (value === 'up') gMeme.lines[gMeme.selectedLineIdx].pos.y += 5
+    if (value === 'down') gMeme.lines[gMeme.selectedLineIdx].pos.y -= 5
 }

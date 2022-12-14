@@ -2,6 +2,7 @@
 
 const gElCanvas = document.querySelector('canvas')
 const gCtx = gElCanvas.getContext('2d')
+var glinePos
 
 // console.log('hi from controller:')
 
@@ -46,56 +47,21 @@ function renderImg(imgId) {
 function OnsetLineTxt(value, ev) {
     setLineTxt(value)
     if (ev.key === 'Backspace') {
-        onDeleteText()
+        deleteCurrText()
         // .onload= renderMeme
-        setTimeout(renderMeme, 10);
         return
     }
     renderMeme()
 }
 
 
-function renderMeme() {
-    const meme = getMeme()
-    console.log('meme:', meme)
-    // renderImg(meme.selectedImgId)
-    const { txt, fillColor, strokeColor, align } = meme.lines[0]
-    gCtx.font = "48px serif";
-    gCtx.fillStyle = fillColor
-    gCtx.strokeStyle = strokeColor
-    gCtx.direction = align
-    
-    var posX
-    switch (align) {
-        case 'rtl':
-            posX = 420
-            break
-        case 'center':
-            posX =230
-            // gCtx.align=align
-            break
-        case 'ltr':
-            posX = 70
-    }
-    gCtx.strokeText(txt, posX, 50);
-    gCtx.fillText(txt, posX, 50);
-    console.log('Ctx:', gCtx)
-    console.log('canvas:', gElCanvas)
-}
-
-
-// function addListeners(){
-//   const elText =document.querySelector('.text')
-//   elText.addEventListener("Backspace",onDeleteText)
-
-// }
-
-function onDeleteText() {
+function deleteCurrText() {
     console.log('hi from deletetext:')
     const meme = getMeme()
     // gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height);
     renderImg(meme.selectedImgId)
     // renderImg.onload=renderMeme()
+    setTimeout(renderMeme, 10)
 }
 
 
@@ -111,13 +77,48 @@ function onSetStrokeColor(value) {
     renderMeme()
 }
 
+
+function renderMeme() {
+    const meme = getMeme()
+    console.log('meme:', meme)
+    // renderImg(meme.selectedImgId)
+    const { txt, fillColor, strokeColor, align,size,pos } = meme.lines[0]
+    console.log('pos:',pos)
+    gCtx.font = `${size}px serif`
+    gCtx.fillStyle = fillColor
+    gCtx.strokeStyle = strokeColor
+    gCtx.direction = align
+    gCtx.strokeText(txt, pos.x, pos.y)
+    gCtx.fillText(txt, pos.x, pos.y)
+    console.log('Ctx:', gCtx)
+    console.log('canvas:', gElCanvas)
+}
+
+
+// function addListeners(){
+//   const elText =document.querySelector('.text')
+//   elText.addEventListener("Backspace",onDeleteText)
+
+// }
+
+
 function onSetAlign(value) {
     setAlign(value)
-    onDeleteText()
-    setTimeout(renderMeme, 10);
+    deleteCurrText()
+    // setTimeout(renderMeme, 10)
 }
 
 // onDeleteText(){
 function onGetPos(ev) {
     console.log('pos x, pos y:', ev.offsetX, ev.offsetY)
+}
+
+function  onSetFontSize(value){
+    setFontSize(value)
+     deleteCurrText()
+}
+
+function onSetLinePos(value){
+    setLinePos(value)
+    deleteCurrText()   
 }
