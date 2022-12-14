@@ -82,7 +82,7 @@ function renderMeme() {
     const meme = getMeme()
     console.log('meme:', meme)
     // renderImg(meme.selectedImgId)
-    const { txt, fillColor, strokeColor, align,size,pos } = meme.lines[0]
+    const { txt, fillColor, strokeColor, align,size,pos } = meme
     console.log('pos:',pos)
     gCtx.font = `${size}px serif`
     gCtx.fillStyle = fillColor
@@ -121,4 +121,8 @@ function  onSetFontSize(value){
 function onSetLinePos(value){
     setLinePos(value)
     deleteCurrText()   
+}
+
+function onSwitchLines(){
+    switchLines()
 }

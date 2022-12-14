@@ -14,6 +14,13 @@ var gMeme = {
         fillColor: 'white',
         strokeColor: 'black',
         pos: { x: 70, y: 50 }
+    }, {
+        txt: '',
+        size: 30,
+        align: 'ltr',
+        fillColor: 'white',
+        strokeColor: 'black',
+        pos: { x: 70, y: 440 }
     }
     ]
 }
@@ -54,7 +61,7 @@ function setImg(imgId) {
 
 
 function getMeme() {
-    return gMeme
+    return gMeme.lines[gMeme.selectedLineIdx]
 }
 
 
@@ -82,8 +89,8 @@ function setStrokeColor(value) {
 
 function setAlign(value) {
     gMeme.lines[gMeme.selectedLineIdx].align = value
-   const pos = gMeme.lines[gMeme.selectedLineIdx].pos
-   
+    const pos = gMeme.lines[gMeme.selectedLineIdx].pos
+
     switch (value) {
         case 'rtl':
             pos.x = 420
@@ -107,4 +114,11 @@ function setFontSize(value) {
 function setLinePos(value) {
     if (value === 'up') gMeme.lines[gMeme.selectedLineIdx].pos.y += 5
     if (value === 'down') gMeme.lines[gMeme.selectedLineIdx].pos.y -= 5
+}
+
+function switchLines() {
+    if (gMeme.selectedLineIdx === gMeme.length - 1) gMeme.selectedLineIdx = 0
+    else gMeme.selectedLineIdx++
+    console.log('idx:',gMeme.selectedLineIdx)
+
 }
