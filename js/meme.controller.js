@@ -63,16 +63,18 @@ function renderMeme() {
     gCtx.font = "48px serif";
     gCtx.fillStyle = fillColor
     gCtx.strokeStyle = strokeColor
-    gCtx.textAlign = align
+    gCtx.direction = align
+    
     var posX
     switch (align) {
-        case 'right':
+        case 'rtl':
             posX = 420
             break
         case 'center':
-            posX = 240
+            posX =230
+            // gCtx.align=align
             break
-        case 'left':
+        case 'ltr':
             posX = 70
     }
     gCtx.strokeText(txt, posX, 50);
