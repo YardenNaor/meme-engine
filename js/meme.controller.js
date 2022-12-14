@@ -7,6 +7,7 @@ const gCtx = gElCanvas.getContext('2d')
 
 function onInit() {
     renderGallery()
+    // addListeners()
 }
 
 function renderGallery() {
@@ -24,12 +25,11 @@ function renderGallery() {
     console.log('strHTMLs:', strHTMLs)
     elGallery.innerHTML = strHTMLs.join('')
 
-
 }
 
 function onImgSelect(imgId) {
     setImg(imgId)
-    renderImg(imgId)
+   renderImg(imgId)
 }
 
 function renderImg(imgId) {
@@ -43,8 +43,12 @@ function renderImg(imgId) {
     }
 }
 
-function OnsetLineTxt(value) {
+function OnsetLineTxt(value,ev) {
     setLineTxt(value)
+    if (ev.key==='Backspace') {
+        onDeleteText()
+        return
+    }
     renderMeme()
 }
 
@@ -52,6 +56,7 @@ function OnsetLineTxt(value) {
 function renderMeme() {
     const meme = getMeme()
     console.log('meme:', meme)
+    // renderImg(meme.selectedImgId)
     const {txt,fillColor,fillStroke}=meme.lines[0]
     gCtx.font = "48px serif";
     gCtx.fillStyle = `${fillColor}`
@@ -63,3 +68,15 @@ function renderMeme() {
 }
 
 
+// function addListeners(){
+//   const elText =document.querySelector('.text')
+//   elText.addEventListener("Backspace",onDeleteText)
+  
+// }
+
+function onDeleteText(){
+    console.log('hi from deletetext:')
+    const meme = getMeme()
+    renderImg(meme.selectedImgId)
+    renderMeme
+}
