@@ -1,0 +1,13 @@
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-container{
+    display:grid ;
+    grid-template-columns: repeat(auto-fit,500px );
+    grid-template-rows: repeat(auto-fit,500px );
+}
