@@ -82,17 +82,18 @@ function setStrokeColor(value) {
 
 function setAlign(value) {
     gMeme.lines[gMeme.selectedLineIdx].align = value
-   var { x } = gMeme.lines[gMeme.selectedLineIdx].pos
+   const pos = gMeme.lines[gMeme.selectedLineIdx].pos
+   
     switch (value) {
         case 'rtl':
-            x = 420
+            pos.x = 420
             break
         case 'center':
-            x = 230
+            pos.x = 230
             // gCtx.align=align
             break
         case 'ltr':
-            x = 70
+            pos.x = 70
     }
 
 }
