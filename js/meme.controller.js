@@ -27,7 +27,7 @@ function renderGallery() {
 
 }
 
-function onImgSelect() {
+function onImgSelect(imgId) {
     setImg(imgId)
     renderImg(imgId)
 }
@@ -52,11 +52,12 @@ function OnsetLineTxt(value) {
 function renderMeme() {
     const meme = getMeme()
     console.log('meme:', meme)
+    const {txt,fillColor,fillStroke}=meme.lines[0]
     gCtx.font = "48px serif";
-    gCtx.fillStyle = `${meme.lines[0].fillColor}`
-    gCtx.strokeStyle = `${meme.lines[0].fillStroke}`
-    gCtx.strokeText(`${value}`, 10, 50);
-    gCtx.fillText(`${value}`, 10, 50);
+    gCtx.fillStyle = `${fillColor}`
+    gCtx.strokeStyle = `${fillStroke}`
+    gCtx.strokeText(`${txt}`, 10, 50);
+    gCtx.fillText(`${txt}`, 10, 50);
     console.log('Ctx:', gCtx)
     console.log('canvas:', gElCanvas)
 }
