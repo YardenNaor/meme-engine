@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body onload="onInit()">
+    <main class="main-container">
   <section class="gallery-container">
-
   </section>
-    
-
+    <section class="editor-container">
+        <section class="editor-inputs">
+         <input type="text" onkeydown="renderMeme(this.value)" placeholder="write your text hear">
+        </section>
+        <canvas width="500" height="500"></canvas>
+    </section>
+</main>
   <script src="/js/meme.controller.js"></script>
   <script src="/js/meme.service.js"></script>
 </body>
