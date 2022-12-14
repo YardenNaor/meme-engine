@@ -29,7 +29,7 @@ function renderGallery() {
 
 function onImgSelect(imgId) {
     setImg(imgId)
-   renderImg(imgId)
+    renderImg(imgId)
 }
 
 function renderImg(imgId) {
@@ -43,10 +43,12 @@ function renderImg(imgId) {
     }
 }
 
-function OnsetLineTxt(value,ev) {
+function OnsetLineTxt(value, ev) {
     setLineTxt(value)
-    if (ev.key==='Backspace') {
+    if (ev.key === 'Backspace') {
         onDeleteText()
+        // .onload= renderMeme
+        setTimeout(renderMeme, 10);
         return
     }
     renderMeme()
@@ -57,12 +59,24 @@ function renderMeme() {
     const meme = getMeme()
     console.log('meme:', meme)
     // renderImg(meme.selectedImgId)
-    const {txt,fillColor,fillStroke}=meme.lines[0]
+    const { txt, fillColor, strokeColor, align } = meme.lines[0]
     gCtx.font = "48px serif";
-    gCtx.fillStyle = `${fillColor}`
-    gCtx.strokeStyle = `${fillStroke}`
-    gCtx.strokeText(`${txt}`, 10, 50);
-    gCtx.fillText(`${txt}`, 10, 50);
+    gCtx.fillStyle = fillColor
+    gCtx.strokeStyle = strokeColor
+    gCtx.textAlign = align
+    var posX
+    switch (align) {
+        case 'right':
+            posX = 420
+            break
+        case 'center':
+            posX = 240
+            break
+        case 'left':
+            posX = 70
+    }
+    gCtx.strokeText(txt, posX, 50);
+    gCtx.fillText(txt, posX, 50);
     console.log('Ctx:', gCtx)
     console.log('canvas:', gElCanvas)
 }
@@ -71,12 +85,37 @@ function renderMeme() {
 // function addListeners(){
 //   const elText =document.querySelector('.text')
 //   elText.addEventListener("Backspace",onDeleteText)
-  
+
 // }
 
-function onDeleteText(){
+function onDeleteText() {
     console.log('hi from deletetext:')
     const meme = getMeme()
+    // gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height);
     renderImg(meme.selectedImgId)
-    renderMeme
+    // renderImg.onload=renderMeme()
+}
+
+
+function onSetFillColor(value) {
+    console.log('value at fill color:', value)
+    setFillColor(value)
+    renderMeme()
+}
+
+function onSetStrokeColor(value) {
+    console.log('value at stroke color:', value)
+    setStrokeColor(value)
+    renderMeme()
+}
+
+function onSetAlign(value) {
+    setAlign(value)
+    onDeleteText()
+    setTimeout(renderMeme, 10);
+}
+
+// onDeleteText(){
+function onGetPos(ev) {
+    console.log('pos x, pos y:', ev.offsetX, ev.offsetY)
 }

@@ -7,7 +7,13 @@ var nextId = 1
 var gMeme = {
     selectedImgId:1,
     selectedLineIdx:0,
-    lines: []
+    lines: [{ txt: '',
+        size: 20,
+        align: 'left',
+        fillColor:'white',
+        strokeColor: 'black'
+    }
+    ]
 }
 
 console.log('hi from sevice:')
@@ -51,14 +57,28 @@ function getMeme() {
 
 
 function setLineTxt(value) {
-    console.log('text:',value)
-    const line = {
-        txt: value,
-        size: 20,
-        align: 'left',
-        fillColor:'white',
-        strokeColor: 'black'
+    // console.log('text:',value)
+    gMeme.lines[gMeme.selectedLineIdx].txt = value
+      
     }
-   gMeme.lines[0]=line
+//    gMeme.lines[gMeme.selectedLineIdx]=line
 //    console.log('gmeme:',gMeme)
+
+
+function setFillColor(value){
+    // console.log('value at fill:',value)
+    // console.log('lineidx color:',gMeme.lines[gMeme.selectedLineIdx])
+    gMeme.lines[gMeme.selectedLineIdx].fillColor=value
+
+}
+
+function setStrokeColor(value){
+    console.log('value at stroke:',value)
+    gMeme.lines[gMeme.selectedLineIdx].strokeColor=value
+
+}
+
+function setAlign(value){
+    gMeme.lines[gMeme.selectedLineIdx].align=value
+
 }

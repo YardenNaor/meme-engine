@@ -10,21 +10,25 @@
 <body onload="onInit()">
     <main class="main-container">
   <section class="gallery-container">
-  </section>
-    <section class="editor-container">
+  </section> 
+   <section class="editor-container">
+        <section class="canvas-container" onclick="onGetPos(event)">
+        <canvas width="500" height="500"></canvas>
+    </section>
+   
         <section class="editor-inputs">
          <input  class="text" type="text" onkeyup="OnsetLineTxt(this.value,event)"  placeholder="write your text hear">
       <input type="color" onchange="onSetFillColor(this.value)"> 
       <input type="color" onchange="onSetStrokeColor(this.value)"> 
-      <button onclick="onSetFontSize('up')"></button>
-      <button onclick="onSetAlign('left')"></button>
-      <button onclick="onSetAlign('right')"></button>
-      <button onclick="onSetFontSize('down')"></button>
-      <button onclick="onSetPos('up')"></button>
-      <button onclick="onSetPos('middle')"></button>
-      <button onclick="onSetPos('down')"></button>
+      <button onclick="onSetAlign('left')">ltr</button>
+      <button onclick="onSetAlign('center')">mid</button>
+      <button onclick="onSetAlign('right')">rtl</button>
+      <button onclick="onSetFontSize('up')">fontup</button>
+      <button onclick="onSetFontSize('down')">fontdown</button>
+      <button onclick="onSetPos('up')">🔼</button>
+      <button onclick="onSetPos('down')">🔽</button>
         </section>
-        <canvas width="500" height="500"></canvas>
+ 
     </section>
 </main>
   <script src="/js/meme.controller.js"></script>

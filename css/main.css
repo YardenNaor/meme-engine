@@ -12,3 +12,16 @@
     grid-template-rows: repeat(auto-fit,500px );
     gap: 10px
 }
+
+.canvas-container{
+    outline: 2px solid black;
+    width: 500px;
+    margin: 30px;
+    
+}
+
+.editor-container{
+    display: flex;
+    /* flex-direction: column; */
+    gap:10px
+}
