@@ -18,7 +18,7 @@ function renderGallery() {
     // console.log('elgallery:',elGallery)
     const strHTMLs = imgs.map(img => {
         return `<article>
-<img data-id="${img.id}" src="${img.url}" onClick="onRenderImg(${img})" >
+<img data-id="${img.id}" src="${img.url}" onClick="onImgSelect(${img.id})" >
 </article>`
     })
     console.log('strHTMLs:', strHTMLs)
@@ -27,25 +27,38 @@ function renderGallery() {
 
 }
 
-function onRenderImg(img){
-
-
+function onImgSelect() {
+    setImg(imgId)
+    renderImg(imgId)
 }
 
-function renderMeme(value) {
-    console.log('value:', value)
-    gCtx.font = "48px serif";
-    gCtx.style='white'
-    gCtx.strokeText(`${value}`, 10, 50);
-    gCtx.fillText(`${value}`, 10, 50);
-
+function renderImg(imgId) {
+    // console.log('img:',img)
+    const img = getImgById(imgId)
+    // console.log('img at renderimg :',img)
     const elImg = new Image()
-    elImg.src = 'img/1.jpg'
+    elImg.src = img.url
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
     }
-    console.log('Ctx:',gCtx)
-    console.log('canvas:', gElCanvas)
-
-
 }
+
+function OnsetLineTxt(value) {
+    setLineTxt(value)
+    renderMeme()
+}
+
+
+function renderMeme() {
+    const meme = getMeme()
+    console.log('meme:', meme)
+    gCtx.font = "48px serif";
+    gCtx.fillStyle = `${meme.lines[0].fillColor}`
+    gCtx.strokeStyle = `${meme.lines[0].fillStroke}`
+    gCtx.strokeText(`${value}`, 10, 50);
+    gCtx.fillText(`${value}`, 10, 50);
+    console.log('Ctx:', gCtx)
+    console.log('canvas:', gElCanvas)
+}
+
+
