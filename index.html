@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,39 +8,45 @@
     <title>meme-engine</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body onload="onInit()">
+    <header>My Meme-engine
+        <!-- <nav> -->
+        <button class="gallery-btn">Gallery</button>
+        <button class="about-btn">About</button>
+    <!-- </nav> -->
+    </header>
     <main class="main-container main-layout">
-        <header>My Meme-engine
-<button>Gallery</button>
-<button>About</button>
-        </header>
-  <section class="gallery-container">
-  </section> 
-   <section  class="editor-container" >
-        <section class="canvas-container" onclick="onGetPos(event)">
-        <canvas width="500" height="500"></canvas>
-    </section>
-   
-        <section class="editor-inputs">
-         <input  class="text" type="text" onkeyup="OnsetLineTxt(this.value,event)"  placeholder="write your text hear">
-      <input type="color" onchange="onSetFillColor(this.value)"> 
-      <input type="color" onchange="onSetStrokeColor(this.value)"> 
-      <button onclick="onSetAlign('left')">ltr</button>
-      <button onclick="onSetAlign('center')">mid</button>
-      <button onclick="onSetAlign('right')">rtl</button>
-      <button onclick="onSetFontSize('up')">fontup</button>
-      <button onclick="onSetFontSize('down')">fontdown</button>
-      <button onclick="onSetLinePos('up')">🔼</button>
-      <button onclick="onSetLinePos('down')">🔽</button>
-      <button onclick="onSwitchLines()">switch</button>
-      <button onclick="onShowGallery()" >Back To gallery</button>
+
+        <section class="gallery-container">
         </section>
- 
-    </section>
-</main>
-  <script src="/js/meme.controller.js"></script>
-  <script src="/js/gallery.controller.js"></script>
-  <script src="/js/meme.service.js"></script>
-  
+        <section class="editor-container">
+            <section class="canvas-container" onclick="onGetPos(event)">
+                <canvas width="500" height="500"></canvas>
+            </section>
+
+            <section class="editor-inputs">
+                <input class="text" type="text" onkeyup="OnsetLineTxt(this.value,event)"
+                    placeholder="write your text hear">
+                <input type="color" onchange="onSetFillColor(this.value)">
+                <input type="color" onchange="onSetStrokeColor(this.value)">
+                <button onclick="onSetAlign('left')">ltr</button>
+                <button onclick="onSetAlign('center')">mid</button>
+                <button onclick="onSetAlign('right')">rtl</button>
+                <button onclick="onSetFontSize('up')">fontup</button>
+                <button onclick="onSetFontSize('down')">fontdown</button>
+                <button onclick="onSetLinePos('up')">🔼</button>
+                <button onclick="onSetLinePos('down')">🔽</button>
+                <button onclick="onSwitchLines()">switch</button>
+                <button onclick="onShowGallery()">Back To gallery</button>
+            </section>
+
+        </section>
+    </main>
+    <script src="/js/meme.controller.js"></script>
+    <script src="/js/gallery.controller.js"></script>
+    <script src="/js/meme.service.js"></script>
+
 </body>
+
 </html>

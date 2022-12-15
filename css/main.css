@@ -1,32 +1,15 @@
 @import "/css/basic/layouts.css";
 @import "/css/basic/base.css";
+
 @import "/css/setup/vars.css";
+@import "/css/setup/font-face.css";
+
+
+@import "/css/cmps/header.css";
+@import "/css/cmps/main.css";
 
 
 
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
 
-.gallery-container{
-    display:grid ;
-    grid-template-columns: repeat(auto-fit,500px );
-    grid-template-rows: repeat(auto-fit,500px );
-    gap: 10px
-}
 
-.canvas-container{
-    outline: 2px solid black;
-    width: 500px;
-    margin: 30px;
-    
-}
-
-.editor-container{
-    display: none;
-    /* flex-direction: column; */
-    gap:10px
-}

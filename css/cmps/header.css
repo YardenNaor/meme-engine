@@ -1,0 +1,28 @@
+header{
+    background-image: var(--clr1) ;
+    padding-top: 1em;
+    padding-bottom: 0.75em;
+    font-size: 1.25rem;
+    margin-right: 25px;
+    margin-left: 15px;
+    /* max-width: 1260px; */
+    border-radius: 2em;
+    color: white;
+    }
+    
+    /* header nav{
+        display: flex;
+        justify-content: space-between;
+    } */
+
+    header button{
+        padding: 0.5em 1em ;
+        margin-left: 0.5em;
+        background-color: transparent;
+        /* background-color:  */
+    }
+
+    header button:hover{
+        color: var(--clr2) ;
+        background-color: white;
+    }
