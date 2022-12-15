@@ -22,11 +22,21 @@
 
 .editor-container {
     display: none;
-    /* flex-direction: column; */
-    gap: 10px
+  
+    gap:20px;
+    align-items: center;
+    
 }
 
 .img-container{
 
     box-shadow: 0 0 0 0;
+}
+
+.editor-inputs{
+    display: flex;
+    min-width: 50vw;
+    min-height: 500px;
+  flex-direction: column;
+  justify-content: space-evenly;
 }

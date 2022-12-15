@@ -1,8 +1,8 @@
 header {
     background-image: var(--clr1);
+    align-items: stretch;
+    font-size: 1.75rem;
 
-    font-size: 2.75rem;
- 
     color: white;
     padding-top: 1em;
     padding-bottom: 1rem;
@@ -11,36 +11,81 @@ header {
 
 
 header .logo {
-   /* width: max-content; */
-    padding: 1.1363em ;
-   
+    /* width: max-content; */
+    /* padding: 1.1363em; */
+    width: 300px;
+    margin-left: 30px;
+
 }
 
 
 header nav {
     display: none;
-  
+
 }
 
-.hamburger{
+.hamburger {
     border-radius: 2rem;
-    padding: 0;
+    padding: 0.2272em 0.4555em;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    color:var(--clr2);
+    font-size: 2.75rem;
+
     /* width: max-content; */
 }
 
-.hamburger img{
+/* .hamburger img {
+/* color: white; */
+    /* width: 25%; */
 
-width: 1rem;
+/* } */ 
+
+
+
+@media (min-width: 800px) {
+    header {
+        font-size: 1.25rem;
+        margin-top: 15px;
+        margin-right: 25px;
+        margin-left: 15px;
+        /* max-width: 1260px; */
+        border-radius: 2em;
+        padding-bottom: 0.75em;
+        align-items: center;
+    }
+
+    
+header .logo {
+    /* width: max-content; */
+    /* padding: 1.1363em; */
+    width: 300px;
+    margin-left: 30px;;
 
 }
 
+    header nav {
+        display: flex;
+        /* margin-right: 7em; */
+        margin-inline-end:500px;
+        gap: 60px;
+
+    }
+
+    /* header nav button{
+        font-size: 30px;
+    
+    } */
+
+    
 header button {
+    
+    background-color: transparent;
     padding: 0.5em 1em;
     margin-left: 0.5em;
-    margin-top: 1em ;
+    margin-top: 1em;
     margin-bottom: 0.7em;
     font-size: 1.25rem;
-    background-color: transparent;
     color: white;
     /* background-color:  */
 }
@@ -50,28 +95,11 @@ header button:hover {
     background-color: white;
 }
 
-@media (min-width: 680px ){
-    header{
-    font-size: 1.25rem;
-    margin-top: 15px;
-    margin-right: 25px;
-    margin-left: 15px;
-    /* max-width: 1260px; */
-    border-radius: 2em;
-    padding-bottom: 0.75em;
-}
-
-header nav {
-    display: block;
-    margin-right: 12.5em;
-
-}
-
-header .logo {
-    padding: 1.5em 4em;
-   
-}
-
-
+    .hamburger {
+   display: none;
+    
+        /* width: max-content; */
+    }
+    
 
 }
