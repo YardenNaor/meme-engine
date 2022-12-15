@@ -66,11 +66,13 @@ function renderMeme() {
    
     const memeLines = getMemeLines()
     // console.log('meme:', meme)
-    // renderImg(meme.selectedImgId)
+    setTimeout(() => {
     memeLines.forEach(line=>{
     const { txt, fillColor, strokeColor, align, size, pos } = line
-    console.log('pos:', pos)
+    gCtx.beginPath()
+    // console.log('size:', size)
     gCtx.font = `${size}px serif`
+    // console.log('gCtx.font:',gCtx.font)
     gCtx.fillStyle = fillColor
     gCtx.strokeStyle = strokeColor
     gCtx.textAlign = align
@@ -79,7 +81,6 @@ function renderMeme() {
         case 'right':
             gCtx.direction= 'rtl';
             posX = (gElCanvas.width/4)*3
-
             break
         case 'center':
             // gCtx.textBaseline = 'middle';
@@ -92,7 +93,7 @@ function renderMeme() {
             posX =  gElCanvas.width/6
     }
 
-    setTimeout(() => {
+    
         gCtx.strokeText(txt, posX, pos.y)
         gCtx.fillText(txt, posX, pos.y)
     }, 10)
