@@ -123,3 +123,7 @@ function switchLines() {
 function getCurrLine(){
     return gMeme.lines[gMeme.selectedLineIdx]
 }
+
+ function deleteTextLine(){
+    gMeme.lines[gMeme.selectedLineIdx].txt=''
+ }

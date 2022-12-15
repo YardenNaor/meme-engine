@@ -31,6 +31,8 @@
             <section class="editor-inputs">
                 <input class="text" type="text" onkeyup="OnsetLineTxt(this.value,event)"
                     placeholder="write your text hear">
+                    <button onclick="onSwitchLines()">switch</button>
+                    <button onclick="onDeleteTextLine()">delete</button>
                 <input type="color" onchange="onSetFillColor(this.value)">
                 <input type="color" onchange="onSetStrokeColor(this.value)">
                 <button onclick="onSetAlign('left')">ltr</button>
@@ -40,7 +42,6 @@
                 <button onclick="onSetFontSize('down')">fontdown</button>
                 <button onclick="onSetLinePos('up')">🔼</button>
                 <button onclick="onSetLinePos('down')">🔽</button>
-                <button onclick="onSwitchLines()">switch</button>
                 <!-- <button onclick="onShowGallery()">Back To gallery</button> -->
             </section>
 

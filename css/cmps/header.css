@@ -4,7 +4,7 @@ header {
     font-size: 1.75rem;
 
     color: white;
-    padding-top: 1em;
+    padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
@@ -25,8 +25,10 @@ header nav {
 }
 
 .hamburger {
+    width: 4rem;
+    max-height: 4rem;
     border-radius: 2rem;
-    padding: 0.2272em 0.4555em;
+    /* padding: 0.3em 0.3em; */
     margin-right: 20px;
     margin-bottom: 20px;
     color:var(--clr2);
@@ -51,7 +53,9 @@ header nav {
         margin-left: 15px;
         /* max-width: 1260px; */
         border-radius: 2em;
-        padding-bottom: 0.75em;
+        padding-top: 0.875rem;
+        padding-bottom: 1.1875rem;
+        /* padding-bottom: 0.75em; */
         align-items: center;
     }
 
@@ -83,8 +87,8 @@ header button {
     background-color: transparent;
     padding: 0.5em 1em;
     margin-left: 0.5em;
-    margin-top: 1em;
-    margin-bottom: 0.7em;
+    /* margin-top: 1em; */
+    /* margin-bottom: 0.7em; */
     font-size: 1.25rem;
     color: white;
     /* background-color:  */

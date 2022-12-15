@@ -157,3 +157,9 @@ function makeRect() {
     gCtx.stroke()
 
 }
+
+function onDeleteTextLine(){
+    deleteTextLine()
+    renderMeme()
+
+}
