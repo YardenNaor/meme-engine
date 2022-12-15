@@ -119,3 +119,7 @@ function switchLines() {
     console.log('idx:',gMeme.selectedLineIdx)
 
 }
+
+function getCurrLine(){
+    return gMeme.lines[gMeme.selectedLineIdx]
+}

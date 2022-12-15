@@ -12,7 +12,7 @@ function onInit() {
 }
 
 
-function renderImg() {
+function renderMeme() {
     // console.log('img:',img)
     const imgId = getMemeImgId()
     const img = getImgById(imgId)
@@ -22,18 +22,20 @@ function renderImg() {
     elImg.src = img.url
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        renderMeme()
+        makeRect()
+        renderMemeLine()
     }
 }
 
-function OnsetLineTxt(value, ev) {
+function OnsetLineTxt(value,ev) {
+    ev.stopPropagation()
     setLineTxt(value)
     // if (ev.key === 'Backspace') {
 
     //     // .onload= renderMeme
     //     return
     // }
-   renderImg()
+    renderMeme()
     // renderMeme()
     // renderMeme()
 }
@@ -53,52 +55,53 @@ function OnsetLineTxt(value, ev) {
 function onSetFillColor(value) {
     console.log('value at fill color:', value)
     setFillColor(value)
-    renderMeme()
+    renderMemeLine()
 }
 
 function onSetStrokeColor(value) {
     console.log('value at stroke color:', value)
     setStrokeColor(value)
-    renderMeme()
+    renderMemeLine()
 }
 
 
-function renderMeme() {
-   
+function renderMemeLine() {
+
     const memeLines = getMemeLines()
     // console.log('meme:', meme)
-    // setTimeout(() => {
-    memeLines.forEach(line=>{
-    const { txt, fillColor, strokeColor, align, size, pos } = line
+    // setTimeout(() => { 
     gCtx.beginPath()
-    // console.log('size:', size)
-    gCtx.font = `${size}px serif`
-    // console.log('gCtx.font:',gCtx.font)
-    gCtx.fillStyle = fillColor
-    gCtx.strokeStyle = strokeColor
-    gCtx.textAlign = align
-   var posX
-    switch (align) {
-        case 'right':
-            gCtx.direction= 'rtl';
-            posX = (gElCanvas.width/4)*3
-            break
-        case 'center':
-            // gCtx.textBaseline = 'middle';
-            posX = gElCanvas.width/2 
-            // - (txt.length*size)/2
-            // gCtx.align=align
-            break
-        case 'left':
-            gCtx.direction = 'ltr'
-            posX =  gElCanvas.width/6
-    }
+    memeLines.forEach(line => {
+        const { txt, fillColor, strokeColor, align, size, pos } = line
 
-    
-        gCtx.strokeText(txt, posX, pos.y)
-        gCtx.fillText(txt, posX, pos.y)
-    // }, 10)
-})
+        gCtx.lineWidth = 6
+        gCtx.font = `${size}px serif`
+        // console.log('gCtx.font:',gCtx.font)
+        gCtx.fillStyle = fillColor
+        gCtx.strokeStyle = strokeColor
+        gCtx.textAlign = align
+        var writeStartPos
+        switch (align) {
+            case 'right':
+                gCtx.direction = 'rtl';
+                writeStartPos = (gElCanvas.width / 4) * 3
+                break
+            case 'center':
+                // gCtx.textBaseline = 'middle';
+                writeStartPos = gElCanvas.width / 2
+                // - (txt.length*size)/2
+                // gCtx.align=align
+                break
+            case 'left':
+                gCtx.direction = 'ltr'
+                writeStartPos = gElCanvas.width / 6
+        }
+
+
+        gCtx.strokeText(txt, writeStartPos, pos.y + 20)
+        gCtx.fillText(txt, writeStartPos, pos.y + 20)
+        // }, 10)
+    })
     // console.log('Ctx:', gCtx)
     // console.log('canvas:', gElCanvas)
 
@@ -114,7 +117,7 @@ function renderMeme() {
 
 function onSetAlign(value) {
     setAlign(value)
-    renderImg()
+    renderMeme()
     // renderMeme()
     // setTimeout(renderMeme, 10)
 }
@@ -126,16 +129,31 @@ function onGetPos(ev) {
 
 function onSetFontSize(value) {
     setFontSize(value)
-    renderImg()
+    renderMeme()
     // renderMeme()
 }
 
 function onSetLinePos(value) {
     setLinePos(value)
-    renderImg()
+    renderMeme()
     // renderMeme()
 }
 
 function onSwitchLines() {
     switchLines()
+    renderMeme()
+   
+
+}
+
+function makeRect() {
+    // renderMeme()
+    gCtx.beginPath()
+    const currLine = getCurrLine()
+    const { pos, size } = currLine
+    gCtx.fillStyle ="rgba(255, 255, 255, 0.5)";
+    gCtx.rect(10, pos.y - 30, gElCanvas.width - 20, pos.y +20)
+    gCtx.fillRect(10, pos.y - 30, gElCanvas.width - 20, pos.y+20 )
+    gCtx.stroke()
+
 }

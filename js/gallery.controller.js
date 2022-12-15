@@ -26,7 +26,7 @@ function onImgSelect(imgId) {
     elEditor.style.display='flex'
     elbtn.classList.remove('chosen')
     setImg(imgId)
-    renderImg()
+    renderMeme()
 }
 
   function onShowGallery(){

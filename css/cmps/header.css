@@ -24,8 +24,12 @@ header nav {
 
 .hamburger{
     border-radius: 2rem;
+    padding: 0;
+    /* width: max-content; */
 }
+
 .hamburger img{
+
 width: 1rem;
 
 }
