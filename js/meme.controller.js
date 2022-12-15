@@ -27,7 +27,7 @@ function renderMeme() {
     }
 }
 
-function OnsetLineTxt(value,ev) {
+function OnsetLineTxt(value, ev) {
     ev.stopPropagation()
     setLineTxt(value)
     // if (ev.key === 'Backspace') {
@@ -142,7 +142,7 @@ function onSetLinePos(value) {
 function onSwitchLines() {
     switchLines()
     renderMeme()
-   
+
 
 }
 
@@ -151,15 +151,41 @@ function makeRect() {
     gCtx.beginPath()
     const currLine = getCurrLine()
     const { pos, size } = currLine
-    gCtx.fillStyle ="rgba(255, 255, 255, 0.5)";
-    gCtx.rect(10, pos.y - 30, gElCanvas.width - 20, pos.y +20)
-    gCtx.fillRect(10, pos.y - 30, gElCanvas.width - 20, pos.y+20 )
+    gCtx.fillStyle = "rgba(255, 255, 255, 0.5)";
+    gCtx.rect(10, pos.y - 30, gElCanvas.width - 20, pos.y + 20)
+    gCtx.fillRect(10, pos.y - 30, gElCanvas.width - 20, pos.y + 20)
     gCtx.stroke()
 
 }
 
-function onDeleteTextLine(){
+function onDeleteTextLine() {
     deleteTextLine()
     renderMeme()
 
 }
+
+function onShare() {
+    console.log('share!:')
+    share(gElCanvas)
+}
+
+function onDownload(elLink) {
+    // renderMemeForDownload(elLink)
+  const imgContent = gElCanvas.toDataURL('image/jpeg')
+        elLink.href = imgContent
+}
+
+// function renderMemeForDownload(elLink) {
+//     const imgId = getMemeImgId()
+//     const img = getImgById(imgId)
+//     console.log('img:', img)
+//     // console.log('img at renderimg :',img)
+//     const elImg = new Image()
+//     elImg.src = img.url
+//     elImg.onload = () => {
+//         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+//         renderMemeLine()
+//     }   
+//     setTimeout(()=>{
+      
+// }
