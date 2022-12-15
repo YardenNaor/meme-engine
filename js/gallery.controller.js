@@ -19,6 +19,17 @@ function renderGallery() {
 }
 
 function onImgSelect(imgId) {
+    const elGallery=document.querySelector('.gallery-container')
+    const elEditor=document.querySelector('.editor-container')
+    elGallery.style.display='none'
+    elEditor.style.display='flex'
     setImg(imgId)
     renderImg()
 }
+
+  function onShowGallery(){
+    const elGallery=document.querySelector('.gallery-container')
+    const elEditor=document.querySelector('.editor-container')
+    elGallery.style.display='grid'
+    elEditor.style.display='none'
+  }

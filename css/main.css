@@ -21,7 +21,7 @@
 }
 
 .editor-container{
-    display: flex;
+    display: none;
     /* flex-direction: column; */
     gap:10px
 }

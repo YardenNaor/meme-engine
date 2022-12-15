@@ -3,7 +3,7 @@
 const gElCanvas = document.querySelector('canvas')
 const gCtx = gElCanvas.getContext('2d')
 var glinePos
-
+var gRenderImg
 // console.log('hi from controller:')
 
 function onInit() {
@@ -11,33 +11,12 @@ function onInit() {
     // addListeners()
 }
 
-function renderGallery() {
-    const imgs = getImgs()
-    console.log('imgs at render:', imgs)
-
-    const elGallery = document.querySelector('.gallery-container')
-
-    // console.log('elgallery:',elGallery)
-    const strHTMLs = imgs.map(img => {
-        return `<article>
-<img data-id="${img.id}" src="${img.url}" onClick="onImgSelect(${img.id})" >
-</article>`
-    })
-    console.log('strHTMLs:', strHTMLs)
-    elGallery.innerHTML = strHTMLs.join('')
-
-}
-
-function onImgSelect(imgId) {
-    setImg(imgId)
-    renderImg()
-}
 
 function renderImg() {
     // console.log('img:',img)
     const imgId = getMemeImgId()
     const img = getImgById(imgId)
-        console.log('img:', img)
+    console.log('img:', img)
     // console.log('img at renderimg :',img)
     const elImg = new Image()
     elImg.src = img.url
@@ -48,24 +27,26 @@ function renderImg() {
 
 function OnsetLineTxt(value, ev) {
     setLineTxt(value)
-    if (ev.key === 'Backspace') {
-        deleteCurrText()
-        // .onload= renderMeme
-        return
-    }
+    // if (ev.key === 'Backspace') {
+
+    //     // .onload= renderMeme
+    //     return
+    // }
+    gRenderImg= renderImg()
     renderMeme()
+    // renderMeme()
 }
 
 
-function deleteCurrText() {
-    console.log('hi from deletetext:')
-    const meme = getMemeCurrLine()
-    // gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height);
-    // console.log('imgId:', meme.selectedImgId)
-    renderImg()
-    // renderImg.onload=renderMeme()
-    setTimeout(renderMeme, 10)
-}
+// function deleteCurrText() {
+//     console.log('hi from deletetext:')
+//     const meme = getMemeCurrLine()
+//     // gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height);
+//     // console.log('imgId:', meme.selectedImgId)
+//     renderImg()
+//     // renderImg.onload=renderMeme()
+
+// }
 
 
 function onSetFillColor(value) {
@@ -82,19 +63,43 @@ function onSetStrokeColor(value) {
 
 
 function renderMeme() {
-    const meme = getMemeCurrLine()
-    console.log('meme:', meme)
+   
+    const memeLines = getMemeLines()
+    // console.log('meme:', meme)
     // renderImg(meme.selectedImgId)
-    const { txt, fillColor, strokeColor, align, size, pos } = meme
+    memeLines.forEach(line=>{
+    const { txt, fillColor, strokeColor, align, size, pos } = line
     console.log('pos:', pos)
     gCtx.font = `${size}px serif`
     gCtx.fillStyle = fillColor
     gCtx.strokeStyle = strokeColor
-    gCtx.direction = align
-    gCtx.strokeText(txt, pos.x, pos.y)
-    gCtx.fillText(txt, pos.x, pos.y)
-    console.log('Ctx:', gCtx)
-    console.log('canvas:', gElCanvas)
+    gCtx.textAlign = align
+   var posX
+    switch (align) {
+        case 'right':
+            gCtx.direction= 'rtl';
+            posX = (gElCanvas.width/4)*3
+
+            break
+        case 'center':
+            // gCtx.textBaseline = 'middle';
+            posX = gElCanvas.width/2 
+            // - (txt.length*size)/2
+            // gCtx.align=align
+            break
+        case 'left':
+            gCtx.direction = 'ltr'
+            posX =  gElCanvas.width/6
+    }
+
+    setTimeout(() => {
+        gCtx.strokeText(txt, posX, pos.y)
+        gCtx.fillText(txt, posX, pos.y)
+    }, 10)
+})
+    // console.log('Ctx:', gCtx)
+    // console.log('canvas:', gElCanvas)
+
 }
 
 
@@ -107,7 +112,8 @@ function renderMeme() {
 
 function onSetAlign(value) {
     setAlign(value)
-    deleteCurrText()
+    renderImg()
+    renderMeme()
     // setTimeout(renderMeme, 10)
 }
 
@@ -118,12 +124,14 @@ function onGetPos(ev) {
 
 function onSetFontSize(value) {
     setFontSize(value)
-    deleteCurrText()
+    renderImg()
+    renderMeme()
 }
 
 function onSetLinePos(value) {
     setLinePos(value)
-    deleteCurrText()
+    renderImg()
+    renderMeme()
 }
 
 function onSwitchLines() {
