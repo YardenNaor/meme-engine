@@ -2,7 +2,7 @@
 
 var gImgs = []
 
-var nextId = 1
+var gNextId = 1
 
 var gMeme = {
     selectedImgId: 1,
@@ -39,7 +39,7 @@ function _createImgs() {
     // while (`img/${nextIdx}.jpg`){
     for (var i = 0; i < 18; i++) {
         const img = {
-            id: nextId++,
+            id: gNextId++,
             url: `img/${i + 1}.jpg`,
             keywords: []
             //  }
@@ -60,7 +60,12 @@ function setImg(imgId) {
 }
 
 
-function getMeme() {
+function getMemeImgId(){
+    return gMeme.selectedImgId
+}
+
+
+function getMemeCurrLine() {
     return gMeme.lines[gMeme.selectedLineIdx]
 }
 
@@ -112,13 +117,16 @@ function setFontSize(value) {
 }
 
 function setLinePos(value) {
-    if (value === 'up') gMeme.lines[gMeme.selectedLineIdx].pos.y += 5
-    if (value === 'down') gMeme.lines[gMeme.selectedLineIdx].pos.y -= 5
+    if (value === 'up') gMeme.lines[gMeme.selectedLineIdx].pos.y -= 5
+    if (value === 'down') gMeme.lines[gMeme.selectedLineIdx].pos.y += 5
 }
 
 function switchLines() {
-    if (gMeme.selectedLineIdx === gMeme.length - 1) gMeme.selectedLineIdx = 0
-    else gMeme.selectedLineIdx++
+    console.log('length:', gMeme.lines.length - 1)
+    if (gMeme.selectedLineIdx === gMeme.lines.length - 1) {
+        gMeme.selectedLineIdx = 0
+    }
+    else {gMeme.selectedLineIdx++}
     console.log('idx:',gMeme.selectedLineIdx)
 
 }

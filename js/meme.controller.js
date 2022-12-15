@@ -30,12 +30,14 @@ function renderGallery() {
 
 function onImgSelect(imgId) {
     setImg(imgId)
-    renderImg(imgId)
+    renderImg()
 }
 
-function renderImg(imgId) {
+function renderImg() {
     // console.log('img:',img)
+    const imgId = getMemeImgId()
     const img = getImgById(imgId)
+        console.log('img:', img)
     // console.log('img at renderimg :',img)
     const elImg = new Image()
     elImg.src = img.url
@@ -57,9 +59,10 @@ function OnsetLineTxt(value, ev) {
 
 function deleteCurrText() {
     console.log('hi from deletetext:')
-    const meme = getMeme()
+    const meme = getMemeCurrLine()
     // gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height);
-    renderImg(meme.selectedImgId)
+    // console.log('imgId:', meme.selectedImgId)
+    renderImg()
     // renderImg.onload=renderMeme()
     setTimeout(renderMeme, 10)
 }
@@ -79,11 +82,11 @@ function onSetStrokeColor(value) {
 
 
 function renderMeme() {
-    const meme = getMeme()
+    const meme = getMemeCurrLine()
     console.log('meme:', meme)
     // renderImg(meme.selectedImgId)
-    const { txt, fillColor, strokeColor, align,size,pos } = meme
-    console.log('pos:',pos)
+    const { txt, fillColor, strokeColor, align, size, pos } = meme
+    console.log('pos:', pos)
     gCtx.font = `${size}px serif`
     gCtx.fillStyle = fillColor
     gCtx.strokeStyle = strokeColor
@@ -113,16 +116,16 @@ function onGetPos(ev) {
     console.log('pos x, pos y:', ev.offsetX, ev.offsetY)
 }
 
-function  onSetFontSize(value){
+function onSetFontSize(value) {
     setFontSize(value)
-     deleteCurrText()
+    deleteCurrText()
 }
 
-function onSetLinePos(value){
+function onSetLinePos(value) {
     setLinePos(value)
-    deleteCurrText()   
+    deleteCurrText()
 }
 
-function onSwitchLines(){
+function onSwitchLines() {
     switchLines()
 }
