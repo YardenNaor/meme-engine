@@ -1,0 +1,17 @@
+
+
+.chosen{
+
+    color: var(--clr2) ;
+    background-color: white;
+
+}
+
+.flex{
+display: flex;
+/* flex-direction: column; */
+}
+
+.space-between{
+   justify-content: space-between;
+}

@@ -21,8 +21,10 @@ function renderGallery() {
 function onImgSelect(imgId) {
     const elGallery=document.querySelector('.gallery-container')
     const elEditor=document.querySelector('.editor-container')
+    const elbtn= document.querySelector('.gallery-btn')
     elGallery.style.display='none'
     elEditor.style.display='flex'
+    elbtn.classList.remove('chosen')
     setImg(imgId)
     renderImg()
 }
@@ -30,6 +32,8 @@ function onImgSelect(imgId) {
   function onShowGallery(){
     const elGallery=document.querySelector('.gallery-container')
     const elEditor=document.querySelector('.editor-container')
+    const elbtn= document.querySelector('.gallery-btn')
     elGallery.style.display='grid'
     elEditor.style.display='none'
+    elbtn.classList.add('chosen')
   }

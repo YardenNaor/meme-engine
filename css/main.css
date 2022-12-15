@@ -1,12 +1,14 @@
 @import "/css/basic/layouts.css";
 @import "/css/basic/base.css";
+@import "/css/basic/helpers.css";
+
 
 @import "/css/setup/vars.css";
 @import "/css/setup/font-face.css";
 
 
 @import "/css/cmps/header.css";
-@import "/css/cmps/main.css";
+@import "/css/cmps/main-content.css";
 
 
 

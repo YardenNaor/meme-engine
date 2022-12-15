@@ -10,11 +10,13 @@
 </head>
 
 <body onload="onInit()">
-    <header>My Meme-engine
-        <!-- <nav> -->
-        <button class="gallery-btn">Gallery</button>
-        <button class="about-btn">About</button>
-    <!-- </nav> -->
+    <header class="flex space-between">
+
+        <section class="logo">My Meme-engine</section>
+        <nav>
+            <button class="gallery-btn chosen" onclick="onShowGallery()">Gallery</button>
+            <button class="about-btn">About</button>
+        </nav>
     </header>
     <main class="main-container main-layout">
 
@@ -38,7 +40,7 @@
                 <button onclick="onSetLinePos('up')">🔼</button>
                 <button onclick="onSetLinePos('down')">🔽</button>
                 <button onclick="onSwitchLines()">switch</button>
-                <button onclick="onShowGallery()">Back To gallery</button>
+                <!-- <button onclick="onShowGallery()">Back To gallery</button> -->
             </section>
 
         </section>

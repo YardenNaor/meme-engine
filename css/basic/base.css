@@ -7,6 +7,12 @@
 
 body{
     font-family: poppins, sans-serif;
+    background-color: var(--clr4);
+}
+
+main{
+    background-color: var(--clr3);
+    border-radius: 0.625rem;
 }
 
 button{
