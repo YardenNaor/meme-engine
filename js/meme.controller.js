@@ -22,6 +22,7 @@ function renderImg() {
     elImg.src = img.url
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+        renderMeme()
     }
 }
 
@@ -32,8 +33,8 @@ function OnsetLineTxt(value, ev) {
     //     // .onload= renderMeme
     //     return
     // }
-    gRenderImg= renderImg()
-    renderMeme()
+   renderImg()
+    // renderMeme()
     // renderMeme()
 }
 
@@ -66,7 +67,7 @@ function renderMeme() {
    
     const memeLines = getMemeLines()
     // console.log('meme:', meme)
-    setTimeout(() => {
+    // setTimeout(() => {
     memeLines.forEach(line=>{
     const { txt, fillColor, strokeColor, align, size, pos } = line
     gCtx.beginPath()
@@ -96,7 +97,7 @@ function renderMeme() {
     
         gCtx.strokeText(txt, posX, pos.y)
         gCtx.fillText(txt, posX, pos.y)
-    }, 10)
+    // }, 10)
 })
     // console.log('Ctx:', gCtx)
     // console.log('canvas:', gElCanvas)
@@ -114,7 +115,7 @@ function renderMeme() {
 function onSetAlign(value) {
     setAlign(value)
     renderImg()
-    renderMeme()
+    // renderMeme()
     // setTimeout(renderMeme, 10)
 }
 
@@ -126,13 +127,13 @@ function onGetPos(ev) {
 function onSetFontSize(value) {
     setFontSize(value)
     renderImg()
-    renderMeme()
+    // renderMeme()
 }
 
 function onSetLinePos(value) {
     setLinePos(value)
     renderImg()
-    renderMeme()
+    // renderMeme()
 }
 
 function onSwitchLines() {

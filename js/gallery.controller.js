@@ -9,7 +9,7 @@ function renderGallery() {
 
     // console.log('elgallery:',elGallery)
     const strHTMLs = imgs.map(img => {
-        return `<article>
+        return `<article class="img-container">
 <img data-id="${img.id}" src="${img.url}" onClick="onImgSelect(${img.id})" >
 </article>`
     })

@@ -1,4 +1,12 @@
 @font-face {
     font-family: poppins;
     src: url("/fonts/Poppins-Regular.ttf");
+
 }
+
+@font-face {
+    font-family: fa;
+    src: url("/fonts/fa-v4compatibility.ttf");
+
+}
+
