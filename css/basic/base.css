@@ -11,9 +11,12 @@ body{
 }
 
 main{
-    
-   
+    justify-content: center;
+    /* align-items: center; */
+   min-width: 100vw;
     margin-top: 20px;
+    /* margin: auto; */
+    /* justify-content: center; */
    
 }
 

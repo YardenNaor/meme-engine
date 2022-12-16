@@ -4,6 +4,7 @@ const gElCanvas = document.querySelector('canvas')
 const gCtx = gElCanvas.getContext('2d')
 var glinePos
 var gRenderImg
+var isEditing=false
 // console.log('hi from controller:')
 
 function onInit() {
@@ -22,13 +23,14 @@ function renderMeme() {
     elImg.src = img.url
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        makeRect()
+       if (isEditing) makeRect()
         renderMemeLine()
     }
 }
 
 function OnsetLineTxt(value, ev) {
     ev.stopPropagation()
+    isEditing=true
     setLineTxt(value)
     // if (ev.key === 'Backspace') {
 
@@ -74,7 +76,7 @@ function renderMemeLine() {
     memeLines.forEach(line => {
         const { txt, fillColor, strokeColor, align, size, pos } = line
 
-        gCtx.lineWidth = 6
+        gCtx.lineWidth = 5
         gCtx.font = `${size}px serif`
         // console.log('gCtx.font:',gCtx.font)
         gCtx.fillStyle = fillColor
@@ -123,8 +125,18 @@ function onSetAlign(value) {
 }
 
 // onDeleteText(){
-function onGetPos(ev) {
+function onCanvasClicked(ev) {
     console.log('pos x, pos y:', ev.offsetX, ev.offsetY)
+    const clickedPosX=ev.offsetX
+    const clickedPosY=ev.offsetY
+    const currLine = getCurrLine()
+    const { pos } = currLine
+    if (clickedPosX<=10 || clickedPosY<=(pos.y - 30)||
+    clickedPosX>=(gElCanvas.width - 20)|| clickedPosY>=pos.y + 20) {
+    isEditing=false
+    renderMeme()
+    }
+  
 }
 
 function onSetFontSize(value) {
@@ -134,8 +146,10 @@ function onSetFontSize(value) {
 }
 
 function onSetLinePos(value) {
+    // isEditing=false
     setLinePos(value)
     renderMeme()
+    // isEditing=true
     // renderMeme()
 }
 
@@ -150,7 +164,7 @@ function makeRect() {
     // renderMeme()
     gCtx.beginPath()
     const currLine = getCurrLine()
-    const { pos, size } = currLine
+    const { pos } = currLine
     gCtx.fillStyle = "rgba(255, 255, 255, 0.5)";
     gCtx.rect(10, pos.y - 30, gElCanvas.width - 20, pos.y + 20)
     gCtx.fillRect(10, pos.y - 30, gElCanvas.width - 20, pos.y + 20)
@@ -170,7 +184,8 @@ function onShare() {
 }
 
 function onDownload(elLink) {
-    // renderMemeForDownload(elLink)
+ isEditing=false
+ renderMeme()
   const imgContent = gElCanvas.toDataURL('image/jpeg')
         elLink.href = imgContent
 }
