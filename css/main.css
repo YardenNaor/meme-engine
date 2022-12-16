@@ -1,18 +1,20 @@
-@import "/css/basic/layouts.css";
-@import "/css/basic/base.css";
-@import "/css/basic/helpers.css";
+@import "./basic/layouts.css";
+@import "./basic/base.css";
+@import "./basic/helpers.css";
 
 
-@import "/css/setup/vars.css";
-@import "/css/setup/font-face.css";
+@import "./setup/vars.css";
+@import "./setup/font-face.css";
 
 
-@import "/css/cmps/header.css";
-@import "/css/cmps/main-content.css";
-@import "/css/cmps/inputs.css";
+@import "./cmps/header.css";
+@import "./cmps/main-content.css";
+@import "./cmps/inputs.css"; 
 
 
-
-
+/* body {
+    background-color: blue;
+}
+ */
 
 
