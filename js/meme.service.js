@@ -20,7 +20,7 @@ var gMeme = {
         align: 'left',
         fillColor: 'white',
         strokeColor: 'black',
-        pos: { x: 70, y: 440 }
+        pos: { x: 70, y: 600 }
     }
     ]
 }

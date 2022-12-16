@@ -2,6 +2,8 @@
 
 
 function renderGallery() {
+  const elEditor=document.querySelector('.editor-container')
+  elEditor.style.display='none'
     const imgs = getImgs()
     console.log('imgs at render:', imgs)
 

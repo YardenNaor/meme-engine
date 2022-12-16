@@ -19,11 +19,12 @@
    box-shadow: 2px 5px 10px 0;
    min-height: max-content;
    /* width: 500px; */
-
+/* background-color: rgb(148, 18, 18); */
 }
 
 
 .canvas-container {
+    /* display: none; */
     box-shadow: 3px -1px 20px 6px  var(--clr0);
     /* var(--clr0); */
     /* width: 50vw; */
@@ -43,9 +44,9 @@
 
 .editor-container {
     display: none;
+    flex-direction: column;
     gap:20px;
     align-items: center;
-    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -72,8 +73,10 @@
 }
 
 @media (min-width:800px){
+
     .editor-container {
         display: none;
+        /* background-color: aqua; */
         flex-direction: row;
     }
 

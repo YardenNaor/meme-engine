@@ -134,10 +134,13 @@ function onCanvasClicked(ev) {
     if (clickedPosX<=10 || clickedPosY<=(pos.y - 30)||
     clickedPosX>=(gElCanvas.width - 20)|| clickedPosY>=pos.y + 20) {
     isEditing=false
+    }else {
+        isEditing=true
+    }
     renderMeme()
     }
   
-}
+
 
 function onSetFontSize(value) {
     setFontSize(value)
@@ -154,6 +157,7 @@ function onSetLinePos(value) {
 }
 
 function onSwitchLines() {
+    isEditing=true
     switchLines()
     renderMeme()
 
