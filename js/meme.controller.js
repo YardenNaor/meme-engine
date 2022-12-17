@@ -199,7 +199,19 @@ function onDownload(elLink) {
 function onShowNav(){
     console.log('hi from hamburger:')
 const elNav=document.querySelector('header nav')
+const elScreen=document.querySelector('.main-screen')
+elNav.style.display='flex'
 elNav.style.transform='translateX(0)'
+elScreen.style.display='block'
+// elScreen.style.backgroungColor=''
+
+}
+
+function onHideNav(){
+    const elNav=document.querySelector('header nav')
+    const elScreen=document.querySelector('.main-screen')
+    elNav.style.transform='translateX(100%)'
+    elScreen.style.display='none'
 }
 
 // function renderMemeForDownload(elLink) {

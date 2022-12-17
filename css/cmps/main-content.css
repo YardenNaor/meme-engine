@@ -1,3 +1,11 @@
+
+.main-screen{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000048;
+}
+
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, 150px);
@@ -32,8 +40,8 @@ canvas {
 
 
 .canvas-container {
-    width: 350px;
-    height: 350px;
+    width: 325px;
+    height: 325px;
     display: flex;
     box-shadow: 3px -1px 20px 6px var(--clr0);
     /* var(--clr0); */
@@ -63,8 +71,8 @@ canvas {
 
 .editor-inputs {
     display: flex;
-    min-width: 350px;
-    min-height: 350px;
+    min-width: 75%;
+    /* min-height: 50%; */
     /* padding: 1.5625rem; */
     margin-top: 20px;
     /* margin-bottom: 30px; */

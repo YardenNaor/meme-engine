@@ -45,14 +45,14 @@ textarea {
 
 .white-buttons-container {
     display: grid;
-    grid-template-columns: repeat(5, 55px);
-    grid-template-rows: repeat(2, 51px);
+    grid-template-columns: repeat(5,1fr) ;
+    grid-template-rows: repeat(2, 1fr);
     row-gap: 20px;
     column-gap: 35px;
     margin-top: 20px;
     margin-bottom: 30px;
     background-color: var(--clr3);
-    width: 85%;
+    width: max-content;
     justify-content: space-around;
     /* align-items: center; */
     
@@ -63,6 +63,7 @@ textarea {
     margin-top: 10px;
     min-width: 12%;
     min-height: 50px;
+    
     /* margin-inline-start: 20px;
     margin-inline-end: 35px; */
 }
@@ -102,4 +103,32 @@ textarea {
 
 .download{
     background-color: var(--clr6);
+}
+
+@media (min-width:800px) {
+    .white-buttons-container {
+        display: grid;
+        grid-template-columns: repeat(5, 55px);
+        grid-template-rows: repeat(2, 51px);
+        row-gap: 20px;
+        column-gap: 35px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        background-color: var(--clr3);
+        width: 85%;
+        justify-content: space-around;
+        /* align-items: center; */
+        
+    
+    }
+
+
+
+    .white-buttons-container button {
+        margin-top: 10px;
+        min-width: 12%;
+        min-height: 50px;
+        /* margin-inline-start: 20px;
+        margin-inline-end: 35px; */
+    }
 }

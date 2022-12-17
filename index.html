@@ -10,14 +10,16 @@
 </head>
 
 <body onload="onInit()">
-    <header class="flex space-between">
+    <div class="main-screen" onclick="onHideNav()"></div>
 
+        <header class="flex space-between">
+            
         <section class="logo"><img src="./img/LOGO.png" alt=""></section>
         <nav>
             <button class="gallery-btn chosen" onclick="onShowGallery()">Gallery</button>
             <button class="about-btn">About</button>
         </nav>
-        <button class="hamburger">☰</button>
+        <button class="hamburger" onclick="onShowNav()">☰</button>
     </header>
     <main class="main-container flex">
 
@@ -26,12 +28,12 @@
         <section class="editor-container">
             <section class="canvas-container" onclick="onCanvasClicked(event)">
                 <canvas width="600" height="600"></canvas>
-               
+                
             </section>
-
+            
             <section class="editor-inputs">
                 <input class="text" type="text" onkeyup="OnsetLineTxt(this.value,event)"
-                    placeholder="write your text hear">
+                placeholder="write your text hear">
                 <section class="colored-buttons-container">
                     <button class="switch" onclick="onSwitchLines()">switch</button>
                     <button class="move" onclick="onSetLinePos('up')">🔼</button>
@@ -60,6 +62,7 @@
     <script src="./js/gallery.controller.js"></script>
     <script src="./js/file.cervice.js"></script>
     <script src="./js/meme.service.js"></script>
+    
 
 </body>
 
