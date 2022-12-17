@@ -14,6 +14,7 @@ gMeme= {
     lines: [{
         txt: '',
         size: 30,
+        font: 'sans serif',
         align: 'left',
         fillColor: 'white',
         strokeColor: 'black',
@@ -21,6 +22,7 @@ gMeme= {
     }, {
         txt: '',
         size: 30,
+        font: 'sans serif',
         align: 'left',
         fillColor: 'white',
         strokeColor: 'black',
@@ -131,4 +133,8 @@ function getCurrLine(){
 
  function deleteTextLine(){
     gMeme.lines[gMeme.selectedLineIdx].txt=''
+ }
+
+ function changeFont(value){
+    gMeme.lines[gMeme.selectedLineIdx].font=value
  }

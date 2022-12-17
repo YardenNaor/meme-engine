@@ -75,10 +75,10 @@ function renderMemeLine() {
     // setTimeout(() => { 
     gCtx.beginPath()
     memeLines.forEach(line => {
-        const { txt, fillColor, strokeColor, align, size, pos } = line
+        const { txt, fillColor, strokeColor, align, size, pos,font } = line
 
         gCtx.lineWidth = 5
-        gCtx.font = `${size}px serif`
+        gCtx.font = `${size}px ${font}`
         // console.log('gCtx.font:',gCtx.font)
         gCtx.fillStyle = fillColor
         gCtx.strokeStyle = strokeColor
@@ -181,6 +181,11 @@ function onDeleteTextLine() {
     deleteTextLine()
     renderMeme()
 
+}
+
+function onChangeFont(value){
+// console.log('hi from font change:', value)
+changeFont(value)
 }
 
 function onShare() {

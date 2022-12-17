@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no">
     <title>meme-engine</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body onload="onInit()">
-    
+
     <header class="flex space-between">
-        
+
         <section class="logo"><img src="./img/LOGO.png" alt=""></section>
         <nav>
             <button class="gallery-btn chosen" onclick="onShowGallery()">Gallery</button>
@@ -28,12 +29,12 @@
         <section class="editor-container">
             <section class="canvas-container" onclick="onCanvasClicked(event)">
                 <canvas width="600" height="600"></canvas>
-                
+
             </section>
-            
+
             <section class="editor-inputs">
                 <input class="text" type="text" onkeyup="OnsetLineTxt(this.value,event)"
-                placeholder="write your text hear">
+                    placeholder="write your text hear">
                 <section class="colored-buttons-container">
                     <button class="switch" onclick="onSwitchLines()">switch</button>
                     <button class="move" onclick="onSetLinePos('up')">🔼</button>
@@ -46,12 +47,18 @@
                     <button class="left" onclick="onSetAlign('left')">ltr</button>
                     <button class="center" onclick="onSetAlign('center')">mid</button>
                     <button class="right" onclick="onSetAlign('right')">rtl</button>
+                    <select class="impact" onchange="onChangeFont(this.value)">
+                        <option value="sans serif">sans serif</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="monospace">monospace</option>
+                    </select>
                     <input class="fill" type="color" onchange="onSetFillColor(this.value)">
                     <input class="stroke" type="color" onchange="onSetStrokeColor(this.value)">
                 </section>
                 <section class="file-buttons-container">
                     <button class="share" onclick="onShare()">share</button>
-                    <button class="download" ><a href="#" onclick="onDownload(this)" download="my-img.jpg">Download</a></button>
+                    <button class="download"><a href="#" onclick="onDownload(this)"
+                            download="my-img.jpg">Download</a></button>
                 </section>
                 <!-- <button onclick="onShowGallery()">Back To gallery</button> -->
             </section>
@@ -62,7 +69,7 @@
     <script src="./js/gallery.controller.js"></script>
     <script src="./js/file.cervice.js"></script>
     <script src="./js/meme.service.js"></script>
-    
+
 
 </body>
 
