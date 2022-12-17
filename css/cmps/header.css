@@ -22,8 +22,21 @@ header .logo {
 
 
 header nav {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: absolute;
+    padding: 30px;
+    gap: 100px;
+    min-height: 50vh;
+    right: 0;
+    top: 0;
+    background-color: rgb(236, 234, 234);
+    transform: translateX(100%);
+}
 
+header button {
+    border-radius: 2em;
 }
 
 .hamburger {
@@ -73,15 +86,21 @@ header nav {
 
     header nav {
         display: flex;
-        /* margin-right: 7em; */
+        position: static;
+        flex-direction: row;
+        gap: 30px;
+        /* position: absolute; */
+        padding: 30px;
+        min-height: 100%;
+
+        background-color: transparent;
+        transform: translateX(0);
         margin-inline-end: 300px;
         gap: 60px;
 
     }
 
-    header button{
-        border-radius: 2em;
-    }
+
     /* header nav button{
         font-size: 30px;
     

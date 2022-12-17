@@ -150,7 +150,7 @@ function onSetFontSize(value) {
 }
 
 function onSetLinePos(value) {
-    // isEditing=false
+    isEditing=false
     setLinePos(value)
     renderMeme()
     // isEditing=true
@@ -193,6 +193,13 @@ function onDownload(elLink) {
  renderMeme()
   const imgContent = gElCanvas.toDataURL('image/jpeg')
         elLink.href = imgContent
+}
+
+
+function onShowNav(){
+    console.log('hi from hamburger:')
+const elNav=document.querySelector('header nav')
+elNav.style.transform='translateX(0)'
 }
 
 // function renderMemeForDownload(elLink) {
