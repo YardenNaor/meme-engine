@@ -4,7 +4,11 @@ var gImgs = []
 
 var gNextId = 1
 
-var gMeme = {
+var gMeme ={}
+
+function createMemes(gElCanvas){
+
+gMeme= {
     selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [{
@@ -13,19 +17,20 @@ var gMeme = {
         align: 'left',
         fillColor: 'white',
         strokeColor: 'black',
-        pos: { x: 70, y: 50 }
+        pos: { x: gElCanvas.width/6, y: gElCanvas.width/10 }
     }, {
         txt: '',
         size: 30,
         align: 'left',
         fillColor: 'white',
         strokeColor: 'black',
-        pos: { x: 70, y: 600 }
+        pos: { x: (gElCanvas.width/6)*5, y: (gElCanvas.width/10)*9 }
     }
     ]
 }
+console.log(gMeme)
+}
 
-console.log('hi from sevice:')
 
 _createImgs()
 

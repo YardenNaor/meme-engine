@@ -9,6 +9,7 @@ var isEditing=false
 
 function onInit() {
     renderGallery()
+    createMemes(gElCanvas)
     // addListeners()
 }
 
