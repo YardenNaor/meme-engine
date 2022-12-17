@@ -32,10 +32,14 @@ function onImgSelect(imgId) {
 }
 
   function onShowGallery(){
+    console.log('hi from show gallery:')
+    const elScreen=document.querySelector('.main-screen')
+
     const elGallery=document.querySelector('.gallery-container')
     const elEditor=document.querySelector('.editor-container')
     const elbtn= document.querySelector('.gallery-btn')
     elGallery.style.display='grid'
     elEditor.style.display='none'
+    elScreen.style.display='none'
     elbtn.classList.add('chosen')
   }
