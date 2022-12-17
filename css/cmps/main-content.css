@@ -24,7 +24,16 @@
 
 
 
+canvas{
+    width: 100%;
+ min-height: 100%;
+  
+}
+
+
 .canvas-container {
+    width: 300px;
+    height: 300px;
     display: flex;
     box-shadow: 3px -1px 20px 6px  var(--clr0);
     /* var(--clr0); */
@@ -37,11 +46,7 @@
 
 }
 
-.canvas{
-     width: 30;
-    height: 30;
-   
- }
+
 
 .editor-container {
     display: none;
@@ -89,7 +94,8 @@
     }
 
     .canvas-container {
-
+        width: 600px;
+        height: 600px;
         margin-left: 100px;
 
     }
@@ -100,5 +106,5 @@
 
     }
 
-
+   
 }
