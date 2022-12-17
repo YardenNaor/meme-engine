@@ -8,7 +8,15 @@
 body{
     font-family: poppins, sans-serif;
     background-color: var(--clr4);
+    
+ 
 }
+
+body::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 
 main{
     justify-content: center;

@@ -6,7 +6,7 @@ header {
     color: white;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    /* justify-content: center; */
+    /* justify-content: space-around; */
     align-items: center;
 }
 
@@ -33,7 +33,7 @@ header nav {
     /* padding: 0.3em 0.3em; */
     margin-right: 20px;
     margin-bottom: 20px;
-    color:var(--clr2);
+    color: var(--clr2);
     font-size: 2.75rem;
 
     /* width: max-content; */
@@ -41,9 +41,9 @@ header nav {
 
 /* .hamburger img {
 /* color: white; */
-    /* width: 25%; */
+/* width: 25%; */
 
-/* } */ 
+/* } */
 
 
 
@@ -61,19 +61,20 @@ header nav {
         align-items: center;
     }
 
-    
-header .logo {
-    /* width: max-content; */
-    /* padding: 1.1363em; */
-    width: 300px;
-    margin-left: 30px;;
 
-}
+    header .logo {
+        /* width: max-content; */
+        /* padding: 1.1363em; */
+        width: 300px;
+        margin-left: 30px;
+        ;
+
+    }
 
     header nav {
         display: flex;
         /* margin-right: 7em; */
-        margin-inline-end:500px;
+        margin-inline-end: 300px;
         gap: 60px;
 
     }
@@ -83,29 +84,29 @@ header .logo {
     
     } */
 
-    
-header button {
-    
-    background-color: transparent;
-    padding: 0.5em 1em;
-    margin-left: 0.5em;
-    /* margin-top: 1em; */
-    /* margin-bottom: 0.7em; */
-    font-size: 1.25rem;
-    color: white;
-    /* background-color:  */
-}
 
-header button:hover {
-    color: var(--clr2);
-    background-color: white;
-}
+    header button {
+
+        background-color: transparent;
+        padding: 0.5em 1em;
+        margin-left: 0.5em;
+        /* margin-top: 1em; */
+        /* margin-bottom: 0.7em; */
+        font-size: 1.25rem;
+        color: white;
+        /* background-color:  */
+    }
+
+    header button:hover {
+        color: var(--clr2);
+        background-color: white;
+    }
 
     .hamburger {
-   display: none;
-    
+        display: none;
+
         /* width: max-content; */
     }
-    
+
 
 }
