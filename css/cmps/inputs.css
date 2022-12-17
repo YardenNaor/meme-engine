@@ -1,12 +1,18 @@
 
-.text   {
+input[type="text"]   {
     border-radius: 25px;
-border: 2px solid #609;
+   
+box-shadow: 0 0 0 0;
 padding: 20px; 
 width: 200px;
 height: 15px;  
 }  
 
+input[type="text"], textarea {
+
+    background-color : var(--clr-1); 
+  
+  }
 /* body{
     background-color: aqua;
 } */
@@ -16,3 +22,4 @@ height: 15px;
     
 
 }
+

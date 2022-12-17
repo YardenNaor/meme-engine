@@ -1,7 +1,7 @@
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
-    grid-template-rows: repeat(auto-fit, 200px);
+    grid-template-columns: repeat(auto-fit, 170px);
+    grid-template-rows: repeat(auto-fit, 170px);
     /* gap : 30px; */
     column-gap:  30px;
     row-gap: 25px;
