@@ -20,6 +20,48 @@ textarea {
 
 }
 
+input[type="color"] {
+    background-color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 5px 0 rgb(201, 200, 200)
+/* padding: 15px; */
+}
+
+.fill::before {
+    content: url("/img/Forme_6.png");;
+/* padding: 15px; */
+}
+
+input[type="color"]::-webkit-color-swatch {
+    display: none;
+    /* background-color:none;
+    background-image: 
+    background-repeat:no-repeat;
+    object-fit:cover; */
+}
+
+/* .stroke::-webkit-color-swatch {
+    display: none; */
+    /* background-color:none;
+    background-image: url("/img/s.png");
+    background-repeat:no-repeat;
+    object-fit:cover; */
+    
+/* 
+.fill::before::content {
+    content: url("/img/Forme_6.png");
+    /* margin: auto; */
+/* padding: 15px; */
+
+
+.stroke::before {
+    content: url("/img/s.png");
+    /* margin: auto; */
+/* padding: 15px; */
+}
+
 
 /* input, select, textarea {
     font-size: 100%;
@@ -41,6 +83,8 @@ textarea {
     min-height: 50px;
     margin-top: 40px;
     margin-bottom: 30px;
+    font-size: 30px;
+   
 }
 
 .white-buttons-container {
@@ -52,7 +96,8 @@ textarea {
     margin-top: 20px;
     margin-bottom: 30px;
     background-color: var(--clr3);
-   max-width: 85%
+   max-width: 85%;
+   min-height: 160px;
     /* justify-content: space-around; */
     /* align-items: center; */
     
@@ -63,9 +108,14 @@ textarea {
     margin-top: 10px;
     min-width: 12%; 
      min-height: 50px;
+     box-shadow: 0 5px 0 rgb(201, 200, 200)
     
     /* margin-inline-start: 20px;
     margin-inline-end: 35px; */
+}
+
+.white-buttons-container button img{
+    width: 60%;
 }
 
 .file-buttons-container {
@@ -82,6 +132,9 @@ textarea {
     font-family: poppins,suns-serif;
     font-size: 1.5625rem;
     grid-column: 1/4;
+    box-shadow: 0 5px 0 rgb(201, 200, 200);
+    border:none
+    
 }
 
 .file-buttons-container button {
@@ -93,23 +146,48 @@ textarea {
 
 .delete {
     background-color: var(--clr7);
+    box-shadow: 0 5px 0 var(--clr7o);
 }
 
 .switch{
     background-color: var(--clr3);
+    box-shadow: 0 5px 0 var(--clr3o);
 }
 
 .move{
     background-color: var(--clr4);
+    box-shadow: 0 5px 0 var(--clr4o);
 }
 
 .share{
     background-color: var(--clr5);
+    box-shadow: 0 5px 0 var(--clr5o);
+    color: white;
+    font-size: 1.3125rem;
+}
+
+.share::before{
+    content: url("/img/Forme_7.png");
 }
 
 .download{
     background-color: var(--clr6);
+    box-shadow: 0 5px 0 var(--clr6o);
+    
 }
+
+.download:before{
+    content: url("/img/Forme_8.png");
+}
+
+.download a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3125rem;
+}
+/* .fill::before{
+    background-image: url("/img/Forme_6.png");
+} */
 
 @media (min-width:800px) {
     .white-buttons-container {

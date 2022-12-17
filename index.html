@@ -36,18 +36,19 @@
                 <input class="text" type="text" onkeyup="OnsetLineTxt(this.value,event)"
                     placeholder="write your text hear">
                 <section class="colored-buttons-container">
-                    <button class="switch" onclick="onSwitchLines()">switch</button>
+                    <button class="switch" onclick="onSwitchLines()"><img src="./img/Forme_3.png" alt=""><img src="./img/Forme_3_copie.png" alt=""></button>
                     <button class="move" onclick="onSetLinePos('up')">🔼</button>
                     <button class="move" onclick="onSetLinePos('down')">🔽</button>
-                    <button class="delete" onclick="onDeleteTextLine()">delete</button>
+                    <button class="delete" onclick="onDeleteTextLine()"><img src="./img/Forme_4.png" alt=""></button>
                 </section>
                 <section class="white-buttons-container">
-                    <button class="size-up" onclick="onSetFontSize('up')">fontup</button>
-                    <button class="size-down" onclick="onSetFontSize('down')">fontdown</button>
-                    <button class="left" onclick="onSetAlign('left')">ltr</button>
-                    <button class="center" onclick="onSetAlign('center')">mid</button>
-                    <button class="right" onclick="onSetAlign('right')">rtl</button>
+                    <button class="size-up" onclick="onSetFontSize('up')"><img src="./img/A+.png" alt=""></button>
+                    <button class="size-down" onclick="onSetFontSize('down')"><img src="./img/A-.png" alt=""></button>
+                    <button class="left" onclick="onSetAlign('left')"><img src="./img/Rectangle_4_copie_3.png" alt=""></button>
+                    <button class="center" onclick="onSetAlign('center')"><img src="./img/Rectangle_4_copie_4.png" alt=""></button>
+                    <button class="right" onclick="onSetAlign('right')"><img src="./img/Rectangle_4_copie_5.png" alt=""></button>
                     <select class="impact" onchange="onChangeFont(this.value)">
+                        <option value="">IMPACT</option>
                         <option value="sans serif">sans serif</option>
                         <option value="fantasy">fantasy</option>
                         <option value="monospace">monospace</option>
@@ -56,9 +57,9 @@
                     <input class="stroke" type="color" onchange="onSetStrokeColor(this.value)">
                 </section>
                 <section class="file-buttons-container">
-                    <button class="share" onclick="onShare()">share</button>
+                    <button class="share" onclick="onShare()"> share</button>
                     <button class="download"><a href="#" onclick="onDownload(this)"
-                            download="my-img.jpg">Download</a></button>
+                            download="my-img.jpg"> Download</a></button>
                 </section>
                 <!-- <button onclick="onShowGallery()">Back To gallery</button> -->
             </section>
