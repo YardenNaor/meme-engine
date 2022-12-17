@@ -30,7 +30,7 @@ input[type="color"] {
 }
 
 .fill::before {
-    content: url("./img/Forme_6.png");;
+    content: url("/img/Forme_6.png");;
 /* padding: 15px; */
 }
 
@@ -57,7 +57,7 @@ input[type="color"]::-webkit-color-swatch {
 
 
 .stroke::before {
-    content: url("./img/s.png");
+    content: url("/img/s.png");
     /* margin: auto; */
 /* padding: 15px; */
 }
@@ -167,7 +167,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .share::before{
-    content: url("./img/Forme_7.png");
+    content: url("/img/Forme_7.png");
 }
 
 .download{
@@ -177,7 +177,7 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .download:before{
-    content: url("./img/Forme_8.png");
+    content: url("/img/Forme_8.png");
 }
 
 .download a{
