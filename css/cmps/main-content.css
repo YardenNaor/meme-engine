@@ -1,7 +1,7 @@
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 170px);
-    grid-template-rows: repeat(auto-fit, 170px);
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-template-rows: repeat(auto-fit, 150px);
     /* gap : 30px; */
     column-gap:  30px;
     row-gap: 25px;
@@ -38,8 +38,8 @@
 }
 
 .canvas{
-     width: 50vw;
-    height: 50vw;
+     width: 30;
+    height: 30;
    
  }
 
@@ -58,15 +58,16 @@
 
 .editor-inputs{
     display: flex;
-   min-width:  650px;
-    
+   min-width:  300px;
+   min-height:300px;
+    /* padding: 1.5625rem; */
     margin-top: 20px;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     margin-right: 90px;
     margin-left: 90px;
     max-height: 650px;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   background-color:  var(--clr0);
   border-radius: 0.625rem;
@@ -93,6 +94,11 @@
 
     }
 
+    .editor-inputs{
+        min-width:  650px;
+        min-height:650px;
+
+    }
 
 
 }

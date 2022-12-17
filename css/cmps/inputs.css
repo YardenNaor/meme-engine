@@ -2,7 +2,7 @@
 input[type="text"]   {
     border-radius: 25px;
    
-box-shadow: 0 0 0 0;
+box-shadow: 0 0 0 var(--clr-1);
 padding: 20px; 
 width: 200px;
 height: 15px;  
@@ -11,8 +11,15 @@ height: 15px;
 input[type="text"], textarea {
 
     background-color : var(--clr-1); 
+    font-family: poppins, sans serif;
+    font-size: 1.5625rem;
   
   }
+
+
+  /* input, select, textarea {
+    font-size: 100%;
+    } */
 /* body{
     background-color: aqua;
 } */
