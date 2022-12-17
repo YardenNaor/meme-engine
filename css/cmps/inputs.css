@@ -1,66 +1,105 @@
-
-input[type="text"]   {
+input[type="text"] {
     border-radius: 25px;
-   
-box-shadow: 0 5px 0 var(--clr-2);
-padding: 20px; 
-width: 69%;
-height: 15px; 
-margin-top: 24px; 
-border: none;
-}  
 
-input[type="text"], textarea {
+    box-shadow: 0 5px 0 var(--clr-2);
+    padding: 20px;
+    width: 69%;
+    height: 15px;
+    /* margin-top: 15px; */
+    border: none;
+}
 
-    background-color : var(--clr-1); 
+input[type="text"],
+textarea {
+
+    background-color: var(--clr-1);
     font-family: poppins, sans serif;
     font-size: 1.5625rem;
     padding: 1em;
     text-align: center;
-  
-  }
+
+}
 
 
-  /* input, select, textarea {
+/* input, select, textarea {
     font-size: 100%;
     } */
 /* body{
     background-color: aqua;
 } */
 
-.editor-inputs button{
+.editor-inputs button {
     width: 55px;
     /* font-family: poppins, sans-serif; */
 
 }
 
 
-.colored-buttons-container button{
+.colored-buttons-container button {
+    margin-inline-end: 20px;
     width: 60px;
     min-height: 50px;
+    margin-top: 40px;
+    margin-bottom: 30px;
 }
 
+.white-buttons-container {
+    display: grid;
+    grid-template-columns: repeat(5, 55px);
+    grid-template-rows: repeat(2, 51px);
+    row-gap: 20px;
+    column-gap: 35px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: var(--clr3);
+    width: 85%;
+    justify-content: space-around;
+    /* align-items: center; */
+    
 
-.white-buttons-container button{
-    width: 55px;
+}
+
+.white-buttons-container button {
+    margin-top: 10px;
+    min-width: 12%;
     min-height: 50px;
+    /* margin-inline-start: 20px;
+    margin-inline-end: 35px; */
 }
 
-.file-buttons-container{
+.file-buttons-container {
     display: flex;
     width: 100%;
+    margin-top: 20px;
     margin-bottom: 30px;
     justify-content: center;
     gap: 20px;
-    
+
 }
-.file-buttons-container button{
+
+.file-buttons-container button {
     width: 30%;
     padding: 20px;
 
-    
+
 }
 
-.delete{
+.delete {
     background-color: var(--clr7);
+}
+
+.switch{
+    background-color: var(--clr3);
+}
+
+.move{
+    background-color: var(--clr4);
+}
+
+.share{
+    background-color: var(--clr5);
+}
+
+.download{
+    background-color: var(--clr6);
 }
