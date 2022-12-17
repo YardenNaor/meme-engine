@@ -30,7 +30,7 @@ input[type="text"], textarea {
 
 .editor-inputs button{
     width: 55px;
-    
+    /* font-family: poppins, sans-serif; */
 
 }
 
@@ -57,6 +57,10 @@ input[type="text"], textarea {
 .file-buttons-container button{
     width: 30%;
     padding: 20px;
+
     
-    
+}
+
+.delete{
+    background-color: var(--clr7);
 }

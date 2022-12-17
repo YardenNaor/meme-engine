@@ -79,6 +79,9 @@ header nav {
 
     }
 
+    header button{
+        border-radius: 2em;
+    }
     /* header nav button{
         font-size: 30px;
     
