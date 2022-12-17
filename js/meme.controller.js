@@ -201,7 +201,7 @@ function onShowNav(){
 const elNav=document.querySelector('header nav')
 const elScreen=document.querySelector('.main-screen')
 elNav.style.display='flex'
-elNav.style.transform='translateX(0)'
+elNav.style.transform='translateX(0%)'
 elScreen.style.display='block'
 // elScreen.style.backgroungColor=''
 
