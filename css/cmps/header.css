@@ -62,7 +62,7 @@ header nav button {
 
 
 
-@media (min-width: 800px) {
+@media (min-width: 700px) {
     header {
         font-size: 1.25rem;
         margin-top: 15px;

@@ -89,7 +89,7 @@ canvas {
     /* flex-grow: 1; */
 }
 
-@media (min-width:800px) {
+@media (min-width:700px) {
 
     .editor-container {
         display: flex;
