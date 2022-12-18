@@ -201,23 +201,16 @@ function onDownload(elLink) {
 }
 
 
-function onShowNav(){
+function onToggleMenu(){
     console.log('hi from hamburger:')
-const elNav=document.querySelector('header nav')
-const elScreen=document.querySelector('.main-screen')
-elNav.style.display='flex'
-elNav.style.transform='translateX(0%)'
-elScreen.style.display='block'
+document.body.classList.toggle('open-menu')
 // elScreen.style.backgroungColor=''
 
 }
 
-function onHideNav(){
-    const elNav=document.querySelector('header nav')
-    const elScreen=document.querySelector('.main-screen')
-    elNav.style.transform='translateX(100%)'
-    elScreen.style.display='none'
-}
+// function onHideNav(){
+//     document.body.classList.remove('open')
+// }
 
 // function renderMemeForDownload(elLink) {
 //     const imgId = getMemeImgId()

@@ -19,10 +19,15 @@ header .logo {
     margin-left: 30px;
 
 }
-
-
-header nav {
+header nav{
     display: none;
+    transform: translateX(100%);
+    transition: transform 1s;
+}
+
+
+body.menu-open header nav{
+    display: flex;
     flex-direction: column;
     gap: 30px;
     position: absolute;
@@ -32,7 +37,7 @@ header nav {
     right: 0;
     top: 0;
     background-color: rgb(236, 234, 234);
-    transform: translateX(100%);
+    transform: translateX(0%);
     transition: transform 1s;
 
 }

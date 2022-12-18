@@ -1,9 +1,18 @@
 
 .main-screen{
     display: none;
-    width: 100vw;
+    /* width: 100vw;
     height: 100vh;
     opacity: 0.0;
+    background-color: black; */
+    
+}
+
+body.menu-open .main-screen{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    opacity: .5;
     background-color: black;
     
 }
