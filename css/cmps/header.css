@@ -16,6 +16,7 @@ header .logo {
     /* width: max-content; */
     /* padding: 1.1363em; */
     width: 200px;
+    margin-left: 16vw;
 }
 
 
@@ -55,7 +56,7 @@ header nav button {
     max-height: 4rem;
     border-radius: 2rem;
     /* padding: 0.3em 0.3em; */
-    margin-right: 20px;
+    margin-right: 12vw;
     margin-bottom: 20px;
     color: var(--clr2);
     font-size: 2.75rem;
@@ -90,9 +91,13 @@ header nav button {
         /* width: max-content; */
         /* padding: 1.1363em; */
         width: 300px;
-        /* margin-left: 30px; */
+        margin-left: 4.5vw;
         
 
+    }
+
+    body.editor  header .logo {
+        margin-left:5.5vw;
     }
 
     header nav {
@@ -105,14 +110,16 @@ header nav button {
         min-height: 100%;
         /* right: 30%; */
         background-color: transparent;
-        transform: translateX(0%);
+        transform: translateX(-2%);
         /* margin-inline-end: 300px; */
         /* gap: 60px; */
 
     }
 
 
-
+body.editor header nav{
+    transform: translateX(-10%);
+}
 
     /* header nav button{
         font-size: 30px;

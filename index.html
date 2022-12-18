@@ -15,8 +15,8 @@
     <div class="main-screen" onclick="onToggleMenu()"></div>
     <header class="flex space-between">
 
-        <section class="logo main-layout"><img src="./img/LOGO.png" alt=""></section>
-        <nav class="main-layout">
+        <section class="logo "><img src="./img/LOGO.png" alt=""></section>
+        <nav >
             <button class="gallery-btn chosen" onclick="onShowGallery()">Gallery</button>
             <button class="about-btn">About</button>
         </nav>
@@ -38,8 +38,8 @@
                 <section class="colored-buttons-container">
                     <button class="switch" onclick="onSwitchLines()"><img src="./img/Forme_3.png" alt=""><img
                             src="./img/Forme_3_copie.png" alt=""></button>
-                    <button class="move" onclick="onSetLinePos('up')">🔼</button>
-                    <button class="move" onclick="onSetLinePos('down')">🔽</button>
+                    <button class="move" onclick="onSetLinePos('up')">↑</button>
+                    <button class="move" onclick="onSetLinePos('down')">↓</button>
                     <button class="delete" onclick="onDeleteTextLine()"><img src="./img/Forme_4.png" alt=""></button>
                 </section>
                 <section class="white-buttons-container">
@@ -58,8 +58,8 @@
                         <option value="monospace">monospace</option>
                     </select>
                     <div class="fill-input-container">
-                        <img src="../../img/Forme_6.png" alt="">
                         <input class="fill" type="color" onchange="onSetFillColor(this.value)">
+                        <img src="../../img/Forme_6.png" alt="">
                     </div>
                     <div class="stroke-input-container">
                         <input class="stroke" type="color" onchange="onSetStrokeColor(this.value)">

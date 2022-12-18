@@ -27,6 +27,7 @@ function onImgSelect(imgId) {
     elGallery.style.display='none'
     elEditor.style.display='flex'
     elbtn.classList.remove('chosen')
+    document.body.classList.toggle('editor')
     setImg(imgId)
     renderMeme()
 }
@@ -45,4 +46,6 @@ function onImgSelect(imgId) {
     elEditor.style.display='none'
     // elScreen.style.display='none'
     elbtn.classList.add('chosen')
+    document.body.classList.toggle('editor')
+
   }
