@@ -12,21 +12,21 @@
 
 <body onload="onInit()">
 
+    <div class="main-screen" onclick="onToggleMenu()"></div>
     <header class="flex space-between">
 
-        <section class="logo"><img src="./img/LOGO.png" alt=""></section>
-        <nav>
+        <section class="logo main-layout"><img src="./img/LOGO.png" alt=""></section>
+        <nav class="main-layout">
             <button class="gallery-btn chosen" onclick="onShowGallery()">Gallery</button>
             <button class="about-btn">About</button>
         </nav>
         <button class="hamburger" onclick="onToggleMenu()">☰</button>
     </header>
-    <div class="main-screen" onclick="onToggleMenu()"></div>
     <main class="main-container flex">
 
-        <section class="gallery-container">
+        <section class="gallery-container main-layout">
         </section>
-        <section class="editor-container">
+        <section class="editor-container main-layout">
             <section class="canvas-container" onclick="onCanvasClicked(event)">
                 <canvas width="600" height="600"></canvas>
 
@@ -36,7 +36,8 @@
                 <input class="text" type="text" onkeyup="OnsetLineTxt(this.value,event)"
                     placeholder="write your text hear">
                 <section class="colored-buttons-container">
-                    <button class="switch" onclick="onSwitchLines()"><img src="./img/Forme_3.png" alt=""><img src="./img/Forme_3_copie.png" alt=""></button>
+                    <button class="switch" onclick="onSwitchLines()"><img src="./img/Forme_3.png" alt=""><img
+                            src="./img/Forme_3_copie.png" alt=""></button>
                     <button class="move" onclick="onSetLinePos('up')">🔼</button>
                     <button class="move" onclick="onSetLinePos('down')">🔽</button>
                     <button class="delete" onclick="onDeleteTextLine()"><img src="./img/Forme_4.png" alt=""></button>
@@ -44,22 +45,31 @@
                 <section class="white-buttons-container">
                     <button class="size-up" onclick="onSetFontSize('up')"><img src="./img/A+.png" alt=""></button>
                     <button class="size-down" onclick="onSetFontSize('down')"><img src="./img/A-.png" alt=""></button>
-                    <button class="left" onclick="onSetAlign('left')"><img src="./img/Rectangle_4_copie_3.png" alt=""></button>
-                    <button class="center" onclick="onSetAlign('center')"><img src="./img/Rectangle_4_copie_4.png" alt=""></button>
-                    <button class="right" onclick="onSetAlign('right')"><img src="./img/Rectangle_4_copie_5.png" alt=""></button>
+                    <button class="left" onclick="onSetAlign('left')"><img src="./img/Rectangle_4_copie_3.png"
+                            alt=""></button>
+                    <button class="center" onclick="onSetAlign('center')"><img src="./img/Rectangle_4_copie_4.png"
+                            alt=""></button>
+                    <button class="right" onclick="onSetAlign('right')"><img src="./img/Rectangle_4_copie_5.png"
+                            alt=""></button>
                     <select class="impact" onchange="onChangeFont(this.value)">
                         <option value="">IMPACT</option>
                         <option value="sans serif">sans serif</option>
                         <option value="fantasy">fantasy</option>
                         <option value="monospace">monospace</option>
                     </select>
-                    <input class="fill" type="color" onchange="onSetFillColor(this.value)">
-                    <input class="stroke" type="color" onchange="onSetStrokeColor(this.value)">
+                    <div class="fill-input-container">
+                        <img src="../../img/Forme_6.png" alt="">
+                        <input class="fill" type="color" onchange="onSetFillColor(this.value)">
+                    </div>
+                    <div class="stroke-input-container">
+                        <input class="stroke" type="color" onchange="onSetStrokeColor(this.value)">
+                        <img src="../../img/s.png" alt="">
+                    </div>
                 </section>
                 <section class="file-buttons-container">
                     <button class="share" onclick="onShare()"> share</button>
-                    <button class="download"><a href="#" onclick="onDownload(this)"
-                            download="my-img.jpg"> Download</a></button>
+                    <button class="download"><a href="#" onclick="onDownload(this)" download="my-img.jpg">
+                            Download</a></button>
                 </section>
                 <!-- <button onclick="onShowGallery()">Back To gallery</button> -->
             </section>

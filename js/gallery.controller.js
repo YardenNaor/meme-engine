@@ -34,7 +34,8 @@ function onImgSelect(imgId) {
   function onShowGallery(){
 
     console.log('hi from show gallery:')
-    onHideNav()
+    onToggleMenu()
+    // onHideNav()
     // const elScreen=document.querySelector('.main-screen')
 
     const elGallery=document.querySelector('.gallery-container')

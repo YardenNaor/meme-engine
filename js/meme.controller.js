@@ -171,9 +171,8 @@ function makeRect() {
     const currLine = getCurrLine()
     const { pos } = currLine
     gCtx.fillStyle = "rgba(255, 255, 255, 0.5)";
-    gCtx.rect(10, pos.y - 30, gElCanvas.width - 20, 120)
-    gCtx.fill()
-    // Rect(10, pos.y - 30, gElCanvas.width - 20, pos.y + 20)
+    gCtx.rect(10, pos.y - 30, gElCanvas.width - 20, pos.y + 20)
+    gCtx.fillRect(10, pos.y - 30, gElCanvas.width - 20, pos.y + 20)
     gCtx.stroke()
 
 }
@@ -201,16 +200,25 @@ function onDownload(elLink) {
         elLink.href = imgContent
 }
 
-
 function onToggleMenu(){
-    console.log('hi from hamburger:')
-document.body.classList.toggle('open-menu')
-// elScreen.style.backgroungColor=''
-
+    document.body.classList.toggle('menu-open')
 }
+// function onShowNav(){
+//     console.log('hi from hamburger:')
+// const elNav=document.querySelector('header nav')
+// const elScreen=document.querySelector('.main-screen')
+// elNav.style.display='flex'
+// elNav.style.transform='translateX(0%)'
+// elScreen.style.display='block'
+// // elScreen.style.backgroungColor=''
+
+// }
 
 // function onHideNav(){
-//     document.body.classList.remove('open')
+//     const elNav=document.querySelector('header nav')
+//     const elScreen=document.querySelector('.main-screen')
+//     elNav.style.transform='translateX(100%)'
+//     elScreen.style.display='none'
 // }
 
 // function renderMemeForDownload(elLink) {

@@ -8,8 +8,7 @@ function share(gElCanvas){
     function onSuccess(uploadedImgUrl) {
         // Encode the instance of certain characters in the url
         const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
-        window.open('https://api.whatsapp.com/send?phone=+*YOURNUMBER*&text=%20*YOURMESSAGE*')
-        (`https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}`)
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}`)
     }
     // Send the image to the server
     doUploadImg(imgDataUrl, onSuccess)

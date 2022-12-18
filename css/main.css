@@ -1,6 +1,7 @@
 /* @import "./basic/layouts.css"; */
 @import "./basic/base.css";
 @import "./basic/helpers.css";
+@import "./basic/layouts.css";
 
 
 @import "./setup/vars.css";

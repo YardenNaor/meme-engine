@@ -38,10 +38,10 @@ input[type="color"] {
 /* padding: 15px; */
 }
 
-.fill::before {
+/* .fill::before {
     content: url("../../img/Forme_6.png");;
 /* padding: 15px; */
-}
+
 
 input[type="color"]::-webkit-color-swatch {
     display: none;
@@ -63,13 +63,11 @@ input[type="color"]::-webkit-color-swatch {
     content: url("/img/Forme_6.png");
     /* margin: auto; */
 /* padding: 15px; */
-
+/* 
 
 .stroke::before {
     content: url("../../img/s.png");
     /* margin: auto; */
-/* padding: 15px; */
-}
 
 
 /* input, select, textarea {
@@ -85,6 +83,11 @@ input[type="color"]::-webkit-color-swatch {
 
 }
 
+.stroke-input-container img{
+    position: relative;
+width: 50%;
+bottom: 50px; 
+}
 
 .colored-buttons-container button {
     margin-inline-end: 20px;
